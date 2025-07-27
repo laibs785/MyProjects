@@ -1,0 +1,147 @@
+/* Explore Menu Container */
+.explore-menu {
+  padding: 4rem 2rem;
+  background-color: #0f0f0f;
+  color: white;
+  text-align: center;
+}
+
+/* Title Styles */
+.explore-menu h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #f59e0b, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Subtitle Text */
+.explore-menu-text {
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Menu List Container */
+.explore-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Menu Items */
+.explore-menu-list-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 120px;
+}
+
+.explore-menu-list-items:hover {
+  transform: translateY(-5px);
+}
+
+/* Menu Images */
+.explore-menu-list-items img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  padding: 5px;
+}
+
+.explore-menu-list-items img:hover {
+  transform: scale(1.1);
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.explore-menu-list-items img.active {
+  border: 2px solid #f59e0b;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+  transform: scale(1.1);
+}
+
+/* Menu Item Text */
+.explore-menu-list-items p {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #d1d5db;
+  transition: color 0.3s ease;
+}
+
+.explore-menu-list-items:hover p {
+  color: #f59e0b;
+}
+
+.explore-menu-list-items img.active + p {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* Divider Line */
+.explore-menu hr {
+  border: none;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .explore-menu {
+    padding: 3rem 1rem;
+  }
+  
+  .explore-menu h1 {
+    font-size: 2rem;
+  }
+  
+  .explore-menu-text {
+    font-size: 1rem;
+  }
+  
+  .explore-menu-list {
+    gap: 1.5rem;
+  }
+  
+  .explore-menu-list-items {
+    width: 100px;
+  }
+  
+  .explore-menu-list-items img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-menu-list {
+    gap: 1rem;
+  }
+  
+  .explore-menu-list-items {
+    width: 80px;
+  }
+  
+  .explore-menu-list-items img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .explore-menu-list-items p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,287 @@
+/* Navbar container */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(255, 165, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+  width: 100%;
+}
+
+/* Navbar inner layout */
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+/* Logo styles */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #f59e0b, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Navigation menu */
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-menu-item {
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.navbar-menu-link {
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.navbar-menu-link:hover {
+  color: #fbbf24;
+}
+
+.navbar-menu-link.active {
+  color: #f59e0b;
+}
+
+/* Menu item underline animation */
+.navbar-menu-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #f59e0b;
+  transition: width 0.3s ease;
+}
+
+.navbar-menu-link:hover::after,
+.navbar-menu-link.active::after {
+  width: 100%;
+}
+
+/* Right side icons */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar-icon {
+  color: #e5e7eb;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-icon:hover {
+  color: #f59e0b;
+  transform: scale(1.1);
+}
+
+.navbar-icon:active {
+  transform: scale(0.95);
+}
+
+/* Cart icon with badge */
+.navbar-cart {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: #f59e0b;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: popIn 0.2s ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Sign in button */
+.sign-in-button {
+  background: linear-gradient(to right, #f59e0b, #f97316);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(245, 158, 11, 0.2);
+}
+
+.sign-in-button:hover {
+  background: linear-gradient(to right, #f97316, #ea580c);
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(245, 158, 11, 0.3);
+}
+
+.sign-in-button:active {
+  transform: scale(0.95);
+}
+/* Existing Navbar Styles (Keep all your current styles) */
+/* ... */
+
+/* ================== */
+/* RESPONSIVE DESIGN */
+/* ================== */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .navbar-menu {
+    gap: 1rem;
+  }
+  
+  .navbar-right {
+    gap: 0.75rem;
+  }
+}
+
+/* Small Screens (Large Phones) */
+@media (max-width: 768px) {
+  .navbar-inner {
+    height: 3.5rem;
+    padding: 0 0.75rem;
+  }
+  
+  .navbar-menu {
+    display: none; /* Hide desktop menu */
+  }
+  
+  /* Mobile Menu Button */
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    color: #e5e7eb;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Mobile Menu (Hidden by default) */
+  .mobile-menu {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(16px);
+    padding: 1rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 40;
+  }
+  
+  .mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .mobile-menu-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 165, 0, 0.1);
+  }
+  
+  .mobile-menu-link {
+    color: #e5e7eb;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+  }
+  
+  /* Show mobile menu button */
+  .mobile-menu-button {
+    display: block;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+  .navbar-inner {
+    height: 3rem;
+  }
+  
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+  
+  .navbar-right {
+    gap: 0.5rem;
+  }
+  
+  .sign-in-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+  
+  .mobile-menu {
+    top: 3rem;
+  }
+}
+
+/* ================== */
+/* UTILITY CLASSES */
+/* ================== */
+/* Add these to your HTML where needed */
+
+.hidden-on-mobile {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .hidden-on-desktop {
+    display: none;
+  }
+  
+  .hidden-on-mobile {
+    display: block;
+  }
+}

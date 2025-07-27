@@ -1,0 +1,48 @@
+/* Food Display Container */
+.food-display {
+ padding: 4rem 2rem;
+  background-color: #0f0f0f;
+  color: white;
+  
+}
+
+.food-display h2 {
+ font-size: 2rem;
+  margin: 0 auto 2rem auto; /* This centers the heading */
+  display: table; /* Better than inline-block for centering */
+  background: linear-gradient(to right, #f59e0b, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  padding: 0 10px; 
+}
+
+/* Food List Grid */
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .food-display {
+    padding: 3rem 1rem;
+  }
+  
+  .food-display-list {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

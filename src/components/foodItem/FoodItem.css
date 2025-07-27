@@ -1,0 +1,125 @@
+/* Food Item Container */
+.food-item {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.2);
+  color:#f59e0b;
+}
+
+/* Food Image */
+.food-item-img-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.food-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.food-item:hover .food-item-image {
+  transform: scale(1.05);
+}
+
+/* Add to Cart Button */
+.add {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.add:hover {
+  transform: scale(1.1);
+}
+
+/* Item Counter */
+.food-item-counter {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.food-item-counter img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.food-item-counter img:hover {
+  transform: scale(1.1);
+}
+
+.food-item-counter p {
+  color: white;
+  font-weight: 600;
+  margin: 0;
+  min-width: 10px;
+  text-align: center;
+}
+
+/* Food Info */
+.food-item-info {
+  padding: 1.2rem;
+}
+
+.food-item-name-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.food-item-name-rating p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.food-item-name-rating img {
+  height: 16px;
+}
+
+.food-item-desc {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.food-item-price {
+  color: #f59e0b;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
