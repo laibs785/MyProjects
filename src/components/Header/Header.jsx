@@ -26,7 +26,7 @@ const Header = () => {
           "Choose from a diverse menu featuring a delectable array of dishes crafted with the perfect blend of tradition and innovation."
         </motion.p>
         
-        <motion.button
+        <motion.buttonrun
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           initial={{ opacity: 0, y: 20 }}
@@ -39,7 +39,7 @@ const Header = () => {
   }}
         >
           View Menu
-        </motion.button>
+        </motion.buttonrun>
       </div>
     </header>
   );
