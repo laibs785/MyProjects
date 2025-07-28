@@ -6,20 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import StoreContextprovider from './components/context/StoreContext';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <BrowserRouter>
+  <BrowserRouter basename="/MyProjects">
     <StoreContextprovider>
-        <App />
-
-    </StoreContextprovider> 
-    </BrowserRouter>
- 
+      <App />
+    </StoreContextprovider>
+  </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

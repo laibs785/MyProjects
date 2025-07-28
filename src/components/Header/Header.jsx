@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { motion } from 'framer-motion';
+import ExploreMenu from '../exploreMenu/ExploreMenu';
 
 const Header = () => {
   return (
@@ -32,6 +33,10 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="header-button"
+         onClick={() => {
+             const section = document.getElementById('explore-menu');
+            section?.scrollIntoView({ behavior: 'smooth' });
+  }}
         >
           View Menu
         </motion.button>
